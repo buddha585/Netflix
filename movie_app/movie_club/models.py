@@ -23,7 +23,7 @@ class Movie(models.Model):
     rating = models.IntegerField(default=0, null=True)
 
     def __str__(self):
-        return self.title
+        return self.title   
      
     @property 
     def review_count(self):

@@ -17,7 +17,7 @@ class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = ('director', 'id', 'title', 'description', 'duration', 'rating', 'reviews', 'review_count' )
-    
+
     def get_review_count(self, movie):
         return movie.review_count
     
