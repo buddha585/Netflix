@@ -18,8 +18,8 @@ class Movie(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     duration = models.CharField(max_length=7)
-    director= models.ForeignKey(Director, on_delete=models.CASCADE, blank=True,
-                                related_name='movies')
+    director = models.ForeignKey(Director, on_delete=models.CASCADE, blank=True,
+                                 related_name='movies')
     rating = models.IntegerField(default=0, null=True)
 
     def __str__(self):
@@ -38,8 +38,8 @@ rate = (
 )
 class Review(models.Model):
     text = models.TextField(max_length=425)    
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE,
-                              related_name ='reviews')
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, null=True,
+                              related_name='reviews')
     stars = models.IntegerField(default=1, choices=rate)
     
     def  __str__(self):
